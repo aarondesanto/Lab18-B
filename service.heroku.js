@@ -7,10 +7,10 @@ app.factory('herokuSrv', function($http) {
   $http({
     method: 'GET',
     url: 'http://twlaas.herokuapp.com'
-  }).then(function(response) {
+  }).then(function successCallback(response) {
     console.log('success');
     herokuInfo.data = response.data;
-  }, function(response) {
+  }, function errorCallback(response) {
     console.log('failure');
     herokuInfo.data = "Uh oh, there was a problem retrieving that data. :(";
   });
